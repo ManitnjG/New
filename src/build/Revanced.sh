@@ -2,27 +2,47 @@
 # Revanced build
 source ./src/build/utils.sh
 # Download requirements
-revanced_dl(){
-	dl_gh "revanced-patches revanced-cli" "revanced" "latest"
+revanced_dl() {
+    dl_gh "revanced-patches revanced-cli" "revanced" "latest"
 }
 
-4() {
-	revanced_dl
-	# Patch Tiktok:
-	get_patches_key "tiktok"
-	url="https://tiktok.en.uptodown.com/android/download/1026195874-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
-	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" "tiktok.apk"
-	patch "tiktok" "revanced"
-	# Patch Instagram:
-	# Arm64-v8a
-	get_patches_key "instagram"
-	get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram" "arm64-v8a" "nodpi"
-	patch "instagram-arm64-v8a" "revanced"
+patch_apps() {
+    revanced_dl
+
+    # ---- Patch TikTok ----
+    get_patches_key "tiktok"
+
+    # Get TikTok APK from Uptodown
+    base_url="https://tiktok.en.uptodown.com/android/download/1026195874-x"
+    final_url="https://dw.uptodown.com/dwn/$(req "$base_url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+
+    # Download TikTok APK
+    req "$final_url" "tiktok.apk"
+
+    # Patch TikTok
+    patch "tiktok" "revanced"
+
+    # ---- Patch Instagram ----
+    get_patches_key "instagram"
+
+    # Download Instagram APK (arm64-v8a)
+    get_apk "com.instagram.android" \
+            "instagram-arm64-v8a" \
+            "instagram-instagram" \
+            "instagram/instagram-instagram/instagram" \
+            "arm64-v8a" \
+            "nodpi"
+
+    # Patch Instagram
+    patch "instagram-arm64-v8a" "revanced"
 }
 
+# CLI handler
+case "$1" in
     4)
-        4
+        patch_apps
         ;;
-  
+    *)
+        echo "Usage: $0 4"
+        ;;
 esac
