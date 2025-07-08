@@ -13,7 +13,7 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 # Patch Instagram:
 get_patches_key "instagram-revanced-experiments"
-version="386.0.0.12.84"
+version="362.0.0.33.241"
 get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram" "arm64-v8a" "nodpi"
 patch "instagram-arm64-v8a" "revanced-experiments"
 
