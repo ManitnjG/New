@@ -17,3 +17,7 @@ version="362.0.0.33.241"
 get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
 patch "instagram-arm64-v8a" "revanced-experiments"
 
+get_patches_key "Spotjfy-anddea"
+j="i" #https://github.com/ReVanced/revanced-patches/issues/4958#issuecomment-2883387940
+get_apkpure "com.spot"$j"fy.music" "spotjfy-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
+patch "spotjfy-arm64-v8a" "anddea"
