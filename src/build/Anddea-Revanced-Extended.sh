@@ -4,6 +4,7 @@ source src/build/utils.sh
 # Download requirements
 dl_gh "revanced-patches" "anddea"
 dl_gh "revanced-cli" "inotia00" "latest"
+wget https://github.com/anddea/revanced-patches/releases/download/v3.10.0/patches-3.10.0.rvp
 get_patches_key "Spotjfy-anddea"
 j="i"
 version="9.0.64.107"
