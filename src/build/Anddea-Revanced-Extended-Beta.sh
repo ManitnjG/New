@@ -8,6 +8,6 @@ dl_gh "revanced-cli" "inotia00" "latest"
 
 get_patches_key "Spotjfy-anddea"
 j="i"
-version="9.0.44.478" #https://github.com/ReVanced/revanced-patches/issues/4958#issuecomment-2883387940
+#https://github.com/ReVanced/revanced-patches/issues/4958#issuecomment-2883387940
 get_apkpure "com.spot"$j"fy.music" "spotjfy-beta-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
 patch "spotjfy-beta-arm64-v8a" "anddea"
