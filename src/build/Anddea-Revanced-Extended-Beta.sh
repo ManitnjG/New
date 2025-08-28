@@ -5,9 +5,8 @@ source src/build/utils.sh
 dl_gh "revanced-patches" "anddea" "prerelease"
 dl_gh "revanced-cli" "inotia00" "latest"
 
-
-get_patches_key "Spotjfy-anddea"
-j="i"
-#https://github.com/ReVanced/revanced-patches/issues/4958#issuecomment-2883387940
-get_apkpure "com.spot"$j"fy.music" "spotjfy-beta-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
-patch "spotjfy-beta-arm64-v8a" "anddea"
+# Patch YouTube:
+get_patches_key "youtube-rve-anddea"
+get_apk "com.google.android.youtube" "youtube-stable" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+split_editor "youtube-stable" "youtube-stable"
+patch "youtube-stable" "anddea" "inotia"
