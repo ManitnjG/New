@@ -2,7 +2,7 @@
 # Revanced Extended forked by Anddea build
 source src/build/utils.sh
 # Download requirements
-dl_gh "revanced-patches" "anddea" "prerelease"
+dl_gh "revanced-patches" "ManitnjG" "prerelease"
 dl_gh "revanced-cli" "inotia00" "latest"
 
 # Patch YouTube:
