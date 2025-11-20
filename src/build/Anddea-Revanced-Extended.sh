@@ -7,7 +7,7 @@ dl_gh "revanced-cli" "inotia00" "latest"
 wget https://github.com/anddea/revanced-patches/releases/download/v3.10.0/patches-3.10.0.rvp
 get_patches_key "Spotjfy-anddea"
 j="i"
-version="9.0.64.107"
+version="9.0.98.265"
 get_apkpure "com.spot"$j"fy.music" "spotjfy-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
 patch "spotjfy-arm64-v8a" "anddea"
 
